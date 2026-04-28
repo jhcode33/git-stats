@@ -44,6 +44,12 @@ jobs:
         EXCLUDED_LANGS: ${{ secrets.EXCLUDED_LANGS }}
         EXCLUDE_FORKED_REPOS: true
 
+    # Download streak stats image to generated folder
+    - name: Download streak stats image
+      run: |
+        curl -o generated/streak.svg \
+          "https://github-readme-streak-stats-eight.vercel.app?user=jhcode33&theme=onedark&date_format=M%20j%5B%2C%20Y%5D&dates=737373&ring=93C5FD&fire=60A5FA&stroke=00000000&currStreakNum=C5E2FF&currStreakLabel=93C5FD&border=00000000&background=161B22"
+    
     # Commit all changed files to the repository
     - name: Commit to the repo
       run: |
